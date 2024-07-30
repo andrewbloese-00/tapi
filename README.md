@@ -1,9 +1,20 @@
 # tapi 
 ---
-**JSDOC Type Definitions from JSON api responses**
-Capable of determining Javascript/TypeScript types based on JSON responses from given endpoints.  
+**Automated Type Definitions**
+- Uses JSON responses to generate TypeScript or JSdoc type definitions. 
+- Create custom scripts with the library functions, or use the cli `tapi.js` 
 
-## Usage 
+### Features
+* Define enpoints in a json file to use the cli 
+    * append type definitions to a file 
+    * copy paste type definitions from terminal output
+
+* Use the NodeJS library for more customizable endpoints. 
+---
+
+
+---
+## CLI Usage 
 `node tapi.js <mode> <endpoints.json> [oFile]`
 * `<mode>` -> `ts` | `jsdoc`
 * `<endpoints.json>` -> a valid path to a json file containing a list of endpoints. 
@@ -12,13 +23,7 @@ Capable of determining Javascript/TypeScript types based on JSON responses from 
 
 
 ---
-## Features
-* Define enpoints in a json file to use the cli 
-    * append type definitions to a file 
-    * copy paste type definitions from terminal output
 
-* Use the NodeJS library for more customizable endpoints. 
----
 
 ## Scripts 
 use `npm run <script_name>`
@@ -31,27 +36,27 @@ use `npm run <script_name>`
 ---
 
 ## Endpoint 
-**Properties** 
-> url : string
-the http endpoint to request (uses fetch api)
+### **Properties** 
+> **url : string**
+* the http url to request (uses fetch api)
 
-> method : string ["get","put" | "post | "delete",...] 
-an http method verb such as GET or POST
+> **method : string**
+* an http method verb such as GET or POST
 
-> bodyJSON?: Object 
-optional request body json 
+> **bodyJSON?: Object**
+* optional request body json 
 
-> formData?: FormData
-optional form data 
+> **formData?: FormData**
+* optional form data 
 
-> headers: Object
-the request headers
+> **headers: Object**
+* the request headers
 
-> typename: string
-what to name the type of the response object
+> **typename: string**
+* what to name the type of the response object
 
-> export?:boolean
-(optional) -> for typescript whether or not the type should be exported 
+> **export?:boolean**
+* (optional) -> for typescript whether or not the type should be exported 
 ----
 
 ## Examples
