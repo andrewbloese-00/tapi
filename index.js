@@ -23,36 +23,36 @@ import fetch from "node-fetch"
 export function get_type(any){
 	const t = typeof any;
 	if(t == "object"){
+        //case: array
 		if(Array.isArray(any)){
 			const atype = any.length === 0 ? "unknown" : get_type(any[0]);
 			return `${atype}[]`;
 		}
+        //case: object
 		else { 
 			const inner = [];
-			let cursor = "{";
+			let cursor = "{ ";
 			for(const key in any)
 				inner.push(`${key}:${get_type(any[key])}`);
-		
 			cursor += inner.join(` , `);
-			cursor +="}";
+			cursor += " }";
 			return cursor;
 		}
-	} else { //base case - is a 'primative' type
-		return t
-	}
+	} else return t //base case - is a 'primative' type
 }
 
 
 
-
+/**
+ * use a sample object to generate named jsdoc or typescript type definitions
+ */ 
 export const TypeFormatters = { 
     jsdoc: (typename,templateObject) => `/**@typedef {${get_type(templateObject)}} ${typename} */`, 
     ts: (typename,templateObject) => `type ${typename} = ${get_type(templateObject)};`
 }
 
-
 /**
- * @param {"jsdoc"|"ts"} mode
+ * @param {"jsdoc"|"ts"} mode the type definition format; "jsdoc" or "ts" 
  * @param {Endpoint[]} endpoints endpoints to test and generate response type information for 
  */
 export async function tapi(mode,endpoints){

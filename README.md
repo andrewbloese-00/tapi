@@ -6,12 +6,8 @@
 
 ### Features
 * Define enpoints in a json file to use the cli 
-    * append type definitions to a file 
-    * copy paste type definitions from terminal output
-
-* Use the NodeJS library for more customizable endpoints. 
----
-
+* append type definitions to a file 
+* copy paste type definitions from terminal output
 
 ---
 ## CLI Usage 
@@ -19,11 +15,7 @@
 * `<mode>` -> `ts` | `jsdoc`
 * `<endpoints.json>` -> a valid path to a json file containing a list of endpoints. 
 * `[oFile]` -> optional; the file to output type definitions to, if not provided prints to stdout. 
-
-
-
 ---
-
 
 ## Scripts 
 use `npm run <script_name>`
@@ -34,8 +26,8 @@ use `npm run <script_name>`
 5. `example-cli-ts` - runs example usage of the CLI to generate ts types to a file. 
 6. `clean` - clears any example generated files
 ---
-
 ## Endpoint 
+Pass endpoints to `tapi(<mode>,endpoints)` to generate type information from the http responses. 
 ### **Properties** 
 > **url : string**
 * the http url to request (uses fetch api)
@@ -57,7 +49,6 @@ use `npm run <script_name>`
 
 > **export?:boolean**
 * (optional) -> for typescript whether or not the type should be exported 
-----
-
+---
 ## Examples
 There are some usage examples in the `examples/` directory for more information. 
