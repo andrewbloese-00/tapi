@@ -1,6 +1,6 @@
 import { tapi } from "../index.js";
 async function main(){
-    const result = await tapi([
+    const result = await tapi('jsdoc',[
         {
             typename: "dummy",
             url: "http://dummyjson.com/test",
