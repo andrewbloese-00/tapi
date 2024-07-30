@@ -1,0 +1,20 @@
+[
+    {
+        "typename": "Dummy",
+        "url": "http://dummyjson.com/test",
+        "method": "GET",
+        "export": true
+    },
+    {
+        "typename": "Product",
+        "url": "http://dummyjson.com/products",
+        "method": "GET",
+        "export": true
+    },
+    {
+        "typename": "Recipe",
+        "url": "http://dummyjson.com/recipes",
+        "method": "GET",
+        "export": true
+    }
+]

@@ -1,0 +1,21 @@
+{
+  "name": "tapi",
+  "version": "0.0.1",
+  "description": "Generate jsdoc or TypeScript type defintions from JSON responses",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "examples-all": "node examples/get_type_ex.js && node examples/tapi_ex.js",
+    "example-get-type": "node examples/get_type_ex.js",
+    "example-tapi": "node examples/tapi_ex.js",
+    "example-cli-js": "node tapi.js jsdoc examples/endpoints.json gentypes.js",
+    "example-cli-ts": "node tapi.js ts examples/endpoints.json gentypes.ts",
+    "clean": "rm gentypes.*"
+  },
+  "keywords": [],
+  "author": "Andrew Bloese",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
