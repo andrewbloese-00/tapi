@@ -12,7 +12,9 @@
     "example-cli-ts": "node tapi.js ts examples/endpoints.json gentypes.ts",
     "clean": "rm gentypes.*"
   },
-  "keywords": [],
+  "keywords": [
+    "tools","api","jsdoc","type generation"
+  ],
   "author": "Andrew Bloese",
   "license": "ISC",
   "dependencies": {
